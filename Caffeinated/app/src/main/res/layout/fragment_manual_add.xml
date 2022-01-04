@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManualAdd"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!--
+      Things we need to have on this fragment:
+      Name of Product
+      Quantity of Product
+      Amount of Caffeine. - Also needs a unit of measure (dropdown not a text entry)
+      Date Product Consumed
+      Barcode? - Not 100% necessary
+
+      Add Button since manual, requires all fields to be filled out
+        If not all fields are filled out, error and tell them to enter
+  -->
+
+    <TextView
+        android:id="@+id/manual_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Manual Entry"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Optional Fields are marked with * (asterisk)"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name:"
+            android:typeface="serif" />
+        <EditText
+            android:id="@+id/manual_product_name_text"
+            android:hint="Product Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:imeOptions="actionDone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Barcode:"
+            android:typeface="serif" />
+        <EditText
+            android:id="@+id/manual_barcode_entry"
+            android:hint="barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Consumption:"
+            android:typeface="serif" />
+        <EditText
+            android:id="@+id/manual_date_entry_text"
+            android:hint="Enter date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity Consumed:"
+            android:typeface="serif" />
+
+        <NumberPicker
+            android:id="@+id/manual_picker_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caffeine amount (mg):"
+            android:typeface="serif" />
+
+        <EditText
+            android:id="@+id/manual_caffeine_amount"
+            android:hint="Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:singleLine="true"
+            android:imeOptions="actionDone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/manual_finish_input"
+            android:text="Submit"
+            android:layout_marginHorizontal="5sp"
+            android:backgroundTint="@color/green"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/manual_clear_input"
+            android:text="Clear"
+            android:layout_marginHorizontal="5sp"
+            android:backgroundTint="@color/red"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

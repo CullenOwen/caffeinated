@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/title_home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_automated_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/automated_add_item"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_manual_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_add_circle_24"
+        android:title="@string/manual_add_item"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_caffeine_history"
+        android:enabled="true"
+        android:title="@string/history"
+        android:icon="@drawable/ic_baseline_show_chart_24"
+        app:showAsAction="ifRoom" />
+</menu>

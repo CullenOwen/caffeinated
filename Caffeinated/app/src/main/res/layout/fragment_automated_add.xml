@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AutomatedAdd"
+    android:orientation="vertical"
+    android:gravity="center">
+    <!--
+        Name?
+        Quantity consumed
+        Date Consumed - Default today
+        BIG Item: Barcode
+
+        Needs some way of saying success or failure
+
+        if success do this vvv
+        Button to push that says "yup, thats my item, please add it to my consumed list"
+
+        if failure do this vvv
+        Want to enter it manually? - Head to the (manual) add section
+
+        Small text note at the bottom saying we are using the openfoodfacts free API
+    -->
+
+    <TextView
+        android:id="@+id/automated_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Automated Entry"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!--
+        TextView "Barcode:"
+        EditText for barcode entry (editable) (restrict to digits)
+            https://stackoverflow.com/questions/13817521/how-do-you-set-the-edittext-keyboard-to-only-consist-of-numbers-on-android
+        Button for scanning barcode, updates editText text.
+
+        -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan"
+            android:id="@+id/button_scan"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="@color/blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Barcode:"
+            android:typeface="serif" />
+        <EditText
+            android:id="@+id/text_barcode"
+            android:singleLine="true"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="barcode..."
+            android:layout_marginHorizontal="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Consumption:"
+            android:typeface="serif" />
+        <EditText
+            android:id="@+id/automated_date_entry_text"
+            android:hint="Enter date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity Consumed:"
+            android:typeface="serif" />
+        <NumberPicker
+            android:id="@+id/automated_picker_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/automated_search_button"
+        android:backgroundTint="@color/green"/>
+
+
+
+</LinearLayout>

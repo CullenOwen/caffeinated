@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CaffeineHistoryFragment"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:id="@id/chart"  />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date One:"
+                android:typeface="serif" />
+            <EditText
+                android:id="@+id/history_date_one"
+                android:hint="Enter date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Two:"
+                android:typeface="serif" />
+            <EditText
+                android:id="@+id/history_date_two"
+                android:hint="Enter date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="25sp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_finish_input"
+                android:text="Submit"
+                android:layout_marginHorizontal="5sp"
+                android:backgroundTint="@color/green"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_clear_input"
+                android:text="Clear"
+                android:layout_marginHorizontal="5sp"
+                android:backgroundTint="@color/red"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
